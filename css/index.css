@@ -1,1 +1,36 @@
 @charset "UTF-8";
+
+#main {
+}
+#main h1 {
+  font-size: var(--font-30);
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+#main .search-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .search-wrap input {
+  width: 100%;
+  height: 57px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  margin-top: 10px;
+  padding-left: 15px;
+  font-size: var(--font-18);
+}
+#main .search-wrap input::placeholder {
+  font-size: var(--font-18);
+}
+#main .search-wrap .popular {
+  display: flex;
+  gap: 15px;
+}
+#main .search-wrap .popular p {
+}
+#main .search-wrap .popular ul {
+  display: flex;
+}

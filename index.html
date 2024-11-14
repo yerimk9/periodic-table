@@ -3,6 +3,28 @@ include_once("{$_SERVER['DOCUMENT_ROOT']}/header.html")
 ?>
 
 
+<section id="main">
+  <div class="width-wrap">
+    <h1>Talbica. 상호작용 화학</h1>
+
+    <div class="search-wrap">
+      <input type="text" placeholder="화학식 또는 반응식을 입력하세요">
+
+      <div class="popular">
+        <p>Popular</p>
+        <ul class="js-popularList"></ul>
+      </div>
+
+      <button type="button">
+        <img src="/img/icon/icon-help.svg" alt="사용법 보기">
+      </button>
+    </div>
+
+
+  </div>
+</section>
+
+<script type="text/javascript" src="/data.js"></script>
 <?
 include_once("{$_SERVER['DOCUMENT_ROOT']}/footer.html")
 ?>
