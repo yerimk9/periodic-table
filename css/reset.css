@@ -138,6 +138,7 @@ section {
   display: block;
 }
 button {
+  cursor: pointer;
   background: inherit;
   border: none;
   box-shadow: none;

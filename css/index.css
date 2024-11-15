@@ -1,7 +1,4 @@
-@charset "UTF-8";
-
-#main {
-}
+/* main */
 #main h1 {
   font-size: var(--font-30);
   font-weight: 700;
@@ -9,6 +6,7 @@
   text-align: center;
 }
 #main .search-wrap {
+  display: grid;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -22,15 +20,287 @@
   padding-left: 15px;
   font-size: var(--font-18);
 }
+#main .search-wrap input::-moz-placeholder {
+  font-size: var(--font-18);
+  color: #999999;
+}
 #main .search-wrap input::placeholder {
   font-size: var(--font-18);
+  color: #999999;
 }
 #main .search-wrap .popular {
   display: flex;
   gap: 15px;
+  margin-top: 10px;
+  overflow: hidden;
 }
 #main .search-wrap .popular p {
+  font-size: var(--font-15);
+  font-weight: 600;
+  margin-left: 10px;
+}
+#main .search-wrap .popular div {
+  width: calc(100% - 76px);
+  -webkit-mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgb(255, 255, 255) 5%, rgb(255, 255, 255) 95%, rgba(255, 255, 255, 0) 100%);
+          mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgb(255, 255, 255) 5%, rgb(255, 255, 255) 95%, rgba(255, 255, 255, 0) 100%);
 }
 #main .search-wrap .popular ul {
   display: flex;
+  width: calc(100% - 76px);
+  animation: scroll-x 60s linear infinite;
+}
+#main .search-wrap .popular ul li {
+  height: 20px;
+  flex-shrink: 0;
+  background: #e3e3e4;
+  border-radius: 18px;
+  padding: 2px 13px;
+  margin-right: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+#main .search-wrap button {
+  position: absolute;
+  right: -30px;
+  top: 30%;
+  transform: translateY(-20%);
+  opacity: 0.4;
+}
+#main .search-wrap button:hover {
+  opacity: 0.6;
+}
+#main .periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(9, auto);
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 10px 10px 0;
+}
+#main .periodic-table .element-item {
+  padding: 7px 5px;
+  background: var(--metalloid);
+  color: var(--white);
+  position: relative;
+}
+#main .periodic-table .element-item .number {
+  font-size: var(--font-10);
+  font-weight: 100;
+}
+#main .periodic-table .element-item .symbol {
+  font-size: var(--font-32);
+  line-height: var(--font-32);
+  font-weight: 900;
+  opacity: 0.95;
+  margin: 2px 0;
+}
+#main .periodic-table .element-item .name {
+  font-size: var(--font-12);
+  font-weight: 500;
+}
+#main .periodic-table .element-item .mass {
+  font-size: var(--font-10);
+  font-weight: 500;
+  color: #000;
+}
+#main .periodic-table .element-item::after, #main .periodic-table .element-item::before {
+  opacity: 0.3;
+  color: #000;
+  font-size: 10px;
+}
+#main .periodic-table .element-item:nth-child(1)::before {
+  content: "1";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(20)::before {
+  content: "2";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(57)::before {
+  content: "3";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(58)::before {
+  content: "4";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(59)::before {
+  content: "5";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(60)::before {
+  content: "6";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(61)::before {
+  content: "7";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(62)::before {
+  content: "8";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(63)::before {
+  content: "9";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(64)::before {
+  content: "10";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(65)::before {
+  content: "11";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(66)::before {
+  content: "12";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(31)::before {
+  content: "13";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(32)::before {
+  content: "14";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(33)::before {
+  content: "15";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(34)::before {
+  content: "16";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(35)::before {
+  content: "17";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(18)::before {
+  content: "18";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .periodic-table .element-item:nth-child(1)::after {
+  content: "1";
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+#main .periodic-table .element-item:nth-child(19)::after {
+  content: "2";
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+#main .periodic-table .element-item:nth-child(37)::after {
+  content: "3";
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+#main .periodic-table .element-item:nth-child(55)::after {
+  content: "4";
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+#main .periodic-table .element-item:nth-child(73)::after {
+  content: "5";
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+#main .periodic-table .element-item:nth-child(91)::after {
+  content: "6";
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+#main .periodic-table .element-item:nth-child(109)::after {
+  content: "7";
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+}
+#main .periodic-table .element-item:nth-child(n+2):nth-child(-n+17), #main .periodic-table .element-item:nth-child(n+21):nth-child(-n+30), #main .periodic-table .element-item:nth-child(n+39):nth-child(-n+48), #main .periodic-table .element-item:nth-child(n+142):nth-child(-n+144), #main .periodic-table .element-item:nth-child(n+160):nth-child(-n+162) {
+  opacity: 0;
+}
+#main .periodic-table .element-item:nth-child(n+127):nth-child(-n+144) {
+  margin-top: 25px;
+}
+#main .periodic-table .element-item:nth-child(1), #main .periodic-table .element-item:nth-child(18) {
+  border-radius: 5px 5px 0 0;
+}
+#main .periodic-table .element-item:nth-child(20), #main .periodic-table .element-item:nth-child(141) {
+  border-radius: 0 5px 0 0;
+}
+#main .periodic-table .element-item:nth-child(31), #main .periodic-table .element-item:nth-child(127) {
+  border-radius: 5px 0 0 0;
+}
+#main .periodic-table .element-item:nth-child(109), #main .periodic-table .element-item:nth-child(145) {
+  border-radius: 0 0 0 5px;
+}
+#main .periodic-table .element-item:nth-child(126), #main .periodic-table .element-item:nth-child(159) {
+  border-radius: 0 0 5px 0;
 }
