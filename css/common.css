@@ -17,7 +17,7 @@ section {
 }
 
 /* modal */
-.modal {
+/* .modal {
   width: 570px;
   height: 96vh;
   border-radius: 40px;
@@ -52,7 +52,7 @@ section {
 }
 .modal .btn div:nth-child(2) {
   transform: rotate(-45deg);
-}
+} */
 
 @keyframes scroll-x {
   0% {
