@@ -1,0 +1,111 @@
+/* info */
+// .info {
+//   .width-wrap {
+//     .element-types {
+//       ul {
+//         li {
+//           span {
+//             display: inline-block;
+//             width: 44px;
+//             height: 14px;
+//             margin-right: 7px;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .selected-item {
+//   display: inline-flex;
+//   gap: 15px;
+
+//   div {
+//     &:nth-child(1) {
+//       width: 110px;
+//       height: 128px;
+//       @include flex(center, stretch, column);
+//       gap: 7px;
+//       padding: 10px;
+//       background: skyblue;
+//       color: (var(--white));
+//       border-radius: 5px;
+
+//       .number {
+//         font-size: 13px;
+//         font-weight: 100;
+//       }
+//       .symbol {
+//         font-size: 56px;
+//         line-height: 32px;
+//         font-weight: 900;
+//         opacity: 0.95;
+//         margin: 2px 0;
+//       }
+
+//       .name {
+//         font-size: 13px;
+//         font-weight: 500;
+//         white-space: nowrap;
+//         overflow: hidden;
+//         text-overflow: ellipsis;
+//         margin-top: 10px;
+//       }
+//       .mass {
+//         font-size: 12px;
+//         font-weight: 500;
+//         color: #000;
+//       }
+//     }
+
+//     &:nth-child(2) {
+//       @include flex(space-evenly, stretch, column);
+//       font-size: 13px;
+
+//       p {
+//         &:not(:last-child) {
+//           margin-bottom: 6px;
+//         }
+//         &:nth-child(1) {
+//           font-size: 14px;
+//           color: #ff9595;
+//         }
+//         span {
+//           margin-left: 15px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .switch-tools {
+//   display: flex;
+//   gap: 30px;
+
+//   div:nth-child(1) {
+//     display: flex;
+//   }
+//   button {
+//     @include flexColCenter;
+//     gap: 7px;
+//     font-size: 13px;
+//     font-weight: 500;
+//     background: #f4f4f4;
+//     width: 80px;
+//     height: 100px;
+
+//     &.js-colors {
+//       border-radius: 5px 0 0 5px;
+//     }
+//     &.js-photos {
+//       border-radius: 0 5px 5px 0;
+//     }
+//     &.js-heatmaps {
+//       width: 90px;
+//       border-radius: 5px;
+//     }
+//     &.active {
+//       background: #e3e3e3;
+//     }
+//   }
+// }

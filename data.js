@@ -18,8 +18,8 @@ popularData = [
 const colorTypes = {
   "Alkali Metal": "#fd6863",
   "Poor Metal": "#75a1e4",
-  "Noble gas": "#daa2e0",
-  "Alkaline earth Metal": "#feb149",
+  "Noble Gas": "#daa2e0",
+  "Alkaline Earth Metal": "#feb149",
   Nonmetal: "#a7d04a",
   Lanthanide: "#a0dccc",
   Metalloid: "#5ac0e8",
@@ -42,7 +42,7 @@ const periodicTable = [
     symbol: "He",
     name: "Helium",
     mass: 4.003,
-    type: "Noble gas",
+    type: "Noble Gas",
   },
   {
     number: 3,
@@ -56,7 +56,7 @@ const periodicTable = [
     symbol: "Be",
     name: "Beryllium",
     mass: 9.012,
-    type: "Alkaline earth Metal",
+    type: "Alkaline Earth Metal",
   },
   {
     number: 5,

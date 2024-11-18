@@ -2,7 +2,7 @@
 popularData.forEach((item) => {
   const listItem = document.createElement("li");
   listItem.innerHTML = item;
-  $(".js-popularList").append(listItem);
+  $(".popularList").append(listItem);
 });
 
 // 주기율표 원소 나열
@@ -15,7 +15,7 @@ periodicTable.forEach((el, idx) => {
     <span class="number">${el.number}</span>
     <p class="symbol">${el.symbol}</p>
     <p class="name">${el.name}</p>
-    <span class="mass">${el.mass}</span>
+    <p class="mass">${el.mass}</p>
   </li>
   `;
 

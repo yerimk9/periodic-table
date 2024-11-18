@@ -2,26 +2,16 @@
 include_once("{$_SERVER['DOCUMENT_ROOT']}/header.html")
 ?>
 
-<!-- modal -->
-<!-- <div class="modal help">
-</div>
 
-<div class="modal element">
-  <div class="btn">
-    <div></div>
-    <div></div>
-  </div>
-</div> -->
-
-<section id="main">
+<div id="main">
   <div class="width-wrap">
-    <h1>Talbica. 상호작용 화학</h1>
+    <h1>Talbica. <br class="under650" /> 상호작용 화학</h1>
     <div class="search-wrap">
       <input type="text" placeholder="화학식 또는 반응식을 입력하세요">
       <div class="popular">
         <p>Popular</p>
         <div>
-          <ul class="js-popularList"></ul>
+          <ul class="popularList"></ul>
         </div>
       </div>
       <button type="button">
@@ -29,36 +19,10 @@ include_once("{$_SERVER['DOCUMENT_ROOT']}/header.html")
       </button>
     </div>
 
-    <div class="selected-item"></div>
-    <div class="switch-tools"></div>
-
     <ul class="periodic-table"></ul>
 
   </div>
-</section>
-
-<section class="info">
-  <div class="width-wrap">
-    <div class="element-types">
-      <h2>원소 유형</h2>
-      <ul>
-        <li data-type="Alkali Metal"><span></span><a href="">알칼리 금속</a></li>
-        <li data-type="Poor Metal"><span></span><a href="">비금속 금속</a></li>
-        <li data-type="Noble gas"><span></span><a href="">귀금속 기체</a></li>
-        <li data-type="Alkaline earth Metal"><span></span><a href="">알칼리 토류 금속</a></li>
-        <li data-type="Nonmetal"><span></span><a href="">비금속</a></li>
-        <li data-type="Lanthanide"><span></span><a href="">란타넘족 원소</a></li>
-        <li data-type="Metalloid"><span></span><a href="">준금속</a></li>
-        <li data-type="Chalcogen"><span></span><a href="">칼코겐</a></li>
-        <li data-type="Actinide"><span></span><a href="">악티늄족 원소</a></li>
-        <li data-type="Transition Metal"><span></span><a href="">전이 금속</a></li>
-        <li data-type="Halogen"><span></span><a href="">할로겐</a></li>
-      </ul>
-    </div>
-    <div></div>
-    <div class="element-glossary"></div>
-  </div>
-</section>
+</div>
 
 <script type="text/javascript" src="/data.js"></script>
 <?

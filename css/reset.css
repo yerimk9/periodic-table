@@ -6,15 +6,8 @@
 
   --background-color: rgba(255, 255, 255, 1);
 
-  --font-56: 56px;
-  --font-32: 32px;
-  --font-30: 30px;
   --font-18: 18px;
-  --font-16: 16px;
   --font-15: 15px;
-  --font-13: 13px;
-  --font-12: 12px;
-  --font-10: 10px;
 }
 * {
   box-sizing: border-box;
@@ -164,4 +157,11 @@ table {
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+@media (max-width: 1000px) and (min-width: 650px) {
+  :root {
+    --font-18: 14px;
+    --font-15: 14px;
+  }
 }
