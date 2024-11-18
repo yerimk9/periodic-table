@@ -16,11 +16,13 @@ section {
   padding: 10px;
 }
 h1 {
+  color: var(--black-white-color);
   font-size: 30px;
   font-weight: 700;
   text-align: center;
 }
 h2 {
+  color: var(--black-white-color);
   font-size: 30px;
   font-weight: 700;
   text-align: left;
@@ -40,19 +42,15 @@ footer .width-wrap {
   padding: 20px 0;
 }
 footer .width-wrap p {
-  color: #333;
+  color: var(--font-color);
   text-align: center;
 }
 footer .width-wrap a {
   font-size: 16px;
-  color: #333;
   text-align: center;
   display: block;
   text-decoration: underline;
   margin-top: 4px;
-}
-footer .width-wrap a:hover {
-  color: #000;
 }
 
 @keyframes scroll-x {

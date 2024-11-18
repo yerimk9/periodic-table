@@ -5,6 +5,8 @@
   --black: #333333;
 
   --background-color: rgba(255, 255, 255, 1);
+  --font-color: #333;
+  --black-white-color: #000000;
 
   --font-18: 18px;
   --font-15: 15px;
@@ -145,8 +147,8 @@ q:after {
   content: none;
 }
 a {
-  font-size: 18px; 
-  color: #333;
+  font-size: 18px;
+  color: var(--font-color);
   text-decoration: none;
   outline: none;
 }
@@ -172,5 +174,16 @@ table {
   :root {
     --font-18: 14px;
     --font-15: 14px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: rgba(0, 0, 0, 1);
+    --font-color: #d2d2d2;
+    --black-white-color: #ffffff;
+  }
+  a:hover {
+    color: #e5e5e5;
   }
 }

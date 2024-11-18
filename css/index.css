@@ -30,6 +30,7 @@
   overflow: hidden;
 }
 .main .search-wrap .popular p {
+  color: var(--black-white-color);
   font-size: var(--font-15);
   font-weight: 600;
   margin-left: 10px;
@@ -45,6 +46,7 @@
   animation: scroll-x 60s linear infinite;
 }
 .main .search-wrap .popular ul li {
+  color: var(--black-white-color);
   height: 20px;
   flex-shrink: 0;
   background: #e3e3e4;
@@ -66,8 +68,9 @@
 }
 .main .selected-zone {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   width: 50%;
   position: absolute;
   top: 190px;
@@ -122,6 +125,9 @@
   font-size: 13px;
   padding: 10px 0;
 }
+.main .selected-zone .selected-item div:nth-child(2) p {
+  color: var(--font-color);
+}
 .main .selected-zone .selected-item div:nth-child(2) p:not(:last-child) {
   margin-bottom: 6px;
 }
@@ -146,6 +152,7 @@
   align-items: center;
   gap: 7px;
   font-size: 13px;
+  color: var(--font-color);
   font-weight: 500;
   background: #f4f4f4;
   width: 80px;
@@ -238,7 +245,7 @@
 }
 .main .periodic-table .element-item::after, .main .periodic-table .element-item::before {
   opacity: 0.3;
-  color: #000;
+  color: var(--black-white-color);
   font-size: 10px;
 }
 .main .periodic-table .element-item:nth-child(1)::before {
@@ -436,6 +443,7 @@
   margin-right: 10px;
 }
 .info .width-wrap .mobile-app p {
+  color: var(--font-color);
   line-height: 22px;
   margin-bottom: 28px;
 }
@@ -519,12 +527,6 @@
     font-size: 14px;
   }
 }
-@media all and (max-width: 960px) {
-  /* info */
-  .info .width-wrap {
-    grid-template-columns: 1fr;
-  }
-}
 @media (max-width: 1000px) and (min-width: 650px) {
   /* main */
   .main .search-wrap {
@@ -544,6 +546,7 @@
     align-items: flex-start;
     left: calc(10px + 1% + 8.3333333333% + 20px);
     top: 150px;
+    width: 52%;
   }
   .main .selected-zone .selected-item {
     gap: 5px;
@@ -682,6 +685,12 @@
   }
   .main .periodic-table .element-item:nth-child(73)::after {
     left: -10px;
+  }
+}
+@media all and (max-width: 960px) {
+  /* info */
+  .info .width-wrap {
+    grid-template-columns: 1fr;
   }
 }
 @media all and (max-width: 650px) {
@@ -927,5 +936,19 @@
   /* info */
   .info {
     display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .main .search-wrap .popular ul li {
+    background: #2b2b2b;
+  }
+  .main .selected-zone .switch-tools button {
+    background: #1b1b1e;
+  }
+  .main .selected-zone .switch-tools button.active {
+    background: #121212;
+  }
+  .info .width-wrap .mobile-app a {
+    border: 1px solid #fff;
   }
 }
