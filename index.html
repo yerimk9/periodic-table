@@ -6,6 +6,7 @@ include_once("{$_SERVER['DOCUMENT_ROOT']}/header.html")
 <section class="main">
   <div class="width-wrap">
     <h1>Talbica. <br class="under650" /> 상호작용 화학</h1>
+
     <div class="search-wrap">
       <input type="text" placeholder="화학식 또는 반응식을 입력하세요">
       <div class="popular">
@@ -17,6 +18,40 @@ include_once("{$_SERVER['DOCUMENT_ROOT']}/header.html")
       <button type="button">
         <img src="/img/icon/icon-help.svg" alt="사용법 보기">
       </button>
+    </div>
+
+    <div class="selected-zone">
+      <div class="selected-item">
+        <div>
+          <span class="number">9</span>
+          <p class="symbol">F</p>
+          <p class="name">Fluorine</p>
+          <span class="mass">18.998</span>
+        </div>
+        <div>
+          <p>Alkaline Earth Metal</p>
+          <p>Atomic weight<span>12.011</span></p>
+          <p>Melting point<span>3550 °C</span></p>
+          <p>Boiling point<span>4000 °C</span></p>
+          <p>Density<span>2.7 g/cm3</span></p>
+        </div>
+      </div>
+      <div class="switch-tools">
+        <div>
+          <button type="button" class="js-colors active">
+            <img src="/img/icon/icon-palette.png" alt="Colors" width="32" height="32">
+            Colors
+          </button>
+          <button type="button" class="js-photos">
+            <img src="/img/icon/icon-ruby.png" alt="Photos" width="32" height="32">
+            Photos
+          </button>
+        </div>
+        <button type="button" class="js-heatmaps">
+          <img src="/img/icon/icon-heatmaps.png" alt="Heatmaps" width="32" height="32">
+          Heatmaps
+        </button>
+      </div>
     </div>
 
     <ul class="periodic-table"></ul>

@@ -39,16 +39,20 @@ footer .width-wrap {
   margin-top: 100px;
   padding: 20px 0;
 }
-footer .width-wrap p,
-footer .width-wrap a {
+footer .width-wrap p {
   color: #333;
   text-align: center;
 }
 footer .width-wrap a {
   font-size: 16px;
+  color: #333;
+  text-align: center;
   display: block;
   text-decoration: underline;
   margin-top: 4px;
+}
+footer .width-wrap a:hover {
+  color: #000;
 }
 
 @keyframes scroll-x {
