@@ -20,8 +20,35 @@ h1 {
   font-weight: 700;
   text-align: center;
 }
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 15px;
+  margin-top: 60px;
+}
 .under650 {
   display: none;
+}
+
+/* footer */
+
+footer .width-wrap {
+  max-width: 750px;
+  border-top: 1px solid #b2b2b2;
+  margin-top: 100px;
+  padding: 20px 0;
+}
+footer .width-wrap p,
+footer .width-wrap a {
+  color: #333;
+  text-align: center;
+}
+footer .width-wrap a {
+  font-size: 16px;
+  display: block;
+  text-decoration: underline;
+  margin-top: 4px;
 }
 
 @keyframes scroll-x {
@@ -33,6 +60,12 @@ h1 {
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@media all and (max-width: 1400px) {
+  h2 {
+    font-size: 24px;
   }
 }
 
@@ -49,5 +82,8 @@ h1 {
   }
   .under650 {
     display: block;
+  }
+  footer {
+    display: none;
   }
 }

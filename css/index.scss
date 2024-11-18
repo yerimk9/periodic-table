@@ -2,7 +2,7 @@
 @import "./variables";
 
 /* main */
-#main {
+.main {
   .search-wrap {
     display: grid;
     position: absolute;
@@ -194,16 +194,98 @@
   }
 }
 
-@media all and (max-width: 1200px) {
-  #main {
-    .periodic-table {
-      .element-item {
+/* info */
+.info {
+  .width-wrap {
+    display: grid;
+    grid-template-columns: 1fr 0.4fr;
+    padding: 10px 20px;
+
+    .element-type {
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px 0px;
+        width: 70%;
+        li {
+          span {
+            display: inline-block;
+            width: 44px;
+            height: 14px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .mobile-app {
+      p {
+        line-height: 22px;
+        margin-bottom: 28px;
+      }
+      a {
+        display: inline-block;
+        height: fit-content;
+        background: #000;
+        border-radius: 8px;
+      }
+    }
+
+    .element-glossary {
+      grid-column: 1 / -1;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px 0;
       }
     }
   }
 }
+
+@media all and (max-width: 1400px) {
+  .info {
+    .width-wrap {
+      grid-template-columns: 1fr 0.6fr;
+
+      .element-type {
+        ul {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+@media all and (max-width: 1160px) {
+  .info {
+    .width-wrap {
+      .mobile-app {
+        p {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+
+        img {
+          width: 130px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  a {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 960px) {
+  .info {
+    .width-wrap {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
 @media (max-width: 1000px) and (min-width: 650px) {
-  #main {
+  /* main */
+  .main {
     .search-wrap {
       width: 65%;
 
@@ -226,13 +308,7 @@
     .periodic-table {
       .element-item {
         padding: 0 5px;
-        // .symbol {
-        //   font-size: 20px;
-        //   line-height: 14px;
-        // }
-        // // .name {
-        // //   font-size: 6px;
-        // // }
+
         .number {
           font-size: 9px;
           font-weight: 500;
@@ -282,7 +358,8 @@
 }
 
 @media all and (max-width: 650px) {
-  #main {
+  /* main */
+  .main {
     .search-wrap {
       width: 90%;
       left: 47%;
@@ -399,5 +476,10 @@
         }
       }
     }
+  }
+
+  /* info */
+  .info {
+    display: none;
   }
 }

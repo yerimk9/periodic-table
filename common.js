@@ -23,7 +23,7 @@ periodicTable.forEach((el, idx) => {
 });
 
 // 원소 유형에 따른 배경 색상 적용
-const element = $(".element-types ul  li");
+const element = $(".element-type ul  li");
 element.each((_, el) => {
   const $el = $(el);
   const dataType = $el.data("type");
