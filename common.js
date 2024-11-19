@@ -37,15 +37,23 @@ element.each((_, el) => {
 $(".toggleBtn").on("click", function () {
   const toggleBtnImg = $(".toggleBtn img");
   const currentSrc = toggleBtnImg.attr("src");
+  const helpBtnImg = $(".helpBtn img");
+  console.log(helpBtnImg);
 
-  if (currentSrc === "/img/icon/icon-sun.svg") {
-    toggleBtnImg.attr("src", "/img/icon/icon-moon.svg");
-    toggleBtnImg.attr("alt", "다크 모드");
-  } else {
-    toggleBtnImg.attr("src", "/img/icon/icon-sun.svg");
-    toggleBtnImg.attr("alt", "라이트 모드");
-  }
-  $("html").toggleClass("dark-mode");
+  $(".toggleBtn").css("transform", "scale(0)");
+
+  setTimeout(function () {
+    if (currentSrc === "/img/icon/icon-sun.svg") {
+      toggleBtnImg.attr("src", "/img/icon/icon-moon.svg");
+      toggleBtnImg.attr("alt", "다크 모드");
+    } else {
+      toggleBtnImg.attr("src", "/img/icon/icon-sun.svg");
+      toggleBtnImg.attr("alt", "라이트 모드");
+    }
+
+    $("html").toggleClass("dark-mode");
+    $(".toggleBtn").css("transform", "scale(1)");
+  }, 300);
 });
 
 // 사용자 환경 테마에 따른 초기 테마

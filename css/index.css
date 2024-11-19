@@ -66,6 +66,9 @@
 .main .search-wrap button:hover {
   opacity: 0.6;
 }
+.main .search-wrap button img {
+  filter: var(--helpBtn);
+}
 .main .selected-zone {
   width: 50%;
   display: flex;
