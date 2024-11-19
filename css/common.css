@@ -1,13 +1,13 @@
-@charset "UTF-8";
 html,
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   background-color: var(--background-color);
 }
+
 section {
   position: relative;
 }
+
 .width-wrap {
   position: relative;
   max-width: 1600px;
@@ -15,36 +15,50 @@ section {
   margin: 0 auto;
   padding: 10px;
 }
+
 h1 {
-  color: var(--black-white-color);
+  color: var(--black);
   font-size: 30px;
   font-weight: 700;
   text-align: center;
 }
+
 h2 {
-  color: var(--black-white-color);
+  color: var(--black);
   font-size: 30px;
   font-weight: 700;
   text-align: left;
   margin-bottom: 15px;
   margin-top: 60px;
 }
+
 .under650 {
   display: none;
 }
+.top650 {
+  display: block;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
 
 /* footer */
-
 footer .width-wrap {
   max-width: 750px;
   border-top: 1px solid #b2b2b2;
   margin-top: 100px;
   padding: 20px 0;
 }
+
 footer .width-wrap p {
-  color: var(--font-color);
+  color: var(--dark-gray);
   text-align: center;
 }
+
 footer .width-wrap a {
   font-size: 16px;
   text-align: center;
@@ -65,18 +79,17 @@ footer .width-wrap a {
   }
 }
 
+/* responsive */
 @media all and (max-width: 1400px) {
   h2 {
     font-size: 24px;
   }
 }
-
 @media (max-width: 1000px) and (min-width: 650px) {
   .width-wrap {
     padding: 10px 0 0 0;
   }
 }
-
 @media all and (max-width: 650px) {
   h1 {
     line-height: 35px;
@@ -85,6 +98,7 @@ footer .width-wrap a {
   .under650 {
     display: block;
   }
+  .top650,
   footer {
     display: none;
   }

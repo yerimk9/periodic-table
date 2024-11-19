@@ -6,7 +6,6 @@ popularData.forEach((item) => {
 });
 
 // 주기율표 원소 나열
-
 periodicTable.forEach((el, idx) => {
   const listItem = `
   <li class="element-item" data-type="${el.type}" style="background-color: ${
@@ -31,5 +30,21 @@ element.each((_, el) => {
   if (colorTypes[dataType]) {
     const span = $el.find("span");
     span.css("background-color", colorTypes[dataType]);
+  }
+});
+
+// 다크모드 토글
+const toggleBtn = $(".toggleBtn");
+toggleBtn.on("click", function () {
+  const toggleBtnImg = $(".toggleBtn img");
+  const currentSrc = toggleBtnImg.attr("src");
+  $("body").toggleClass("dark-mode");
+
+  if (currentSrc === "/img/icon/icon-sun.svg") {
+    toggleBtnImg.attr("src", "/img/icon/icon-moon.svg");
+    toggleBtnImg.attr("alt", "다크 모드");
+  } else {
+    toggleBtnImg.attr("src", "/img/icon/icon-sun.svg");
+    toggleBtnImg.attr("alt", "라이트 모드");
   }
 });

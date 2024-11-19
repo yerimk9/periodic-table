@@ -9,10 +9,10 @@
 .main .search-wrap input {
   width: 100%;
   height: 57px;
-  background: #f7f7f7;
+  background: var(--input-background);
   border-radius: 12px;
-  margin-top: 10px;
   padding-left: 15px;
+  margin-top: 10px;
   font-size: var(--font-18);
 }
 .main .search-wrap input::-moz-placeholder {
@@ -30,7 +30,7 @@
   overflow: hidden;
 }
 .main .search-wrap .popular p {
-  color: var(--black-white-color);
+  color: var(--black);
   font-size: var(--font-15);
   font-weight: 600;
   margin-left: 10px;
@@ -46,20 +46,20 @@
   animation: scroll-x 60s linear infinite;
 }
 .main .search-wrap .popular ul li {
-  color: var(--black-white-color);
   height: 20px;
-  flex-shrink: 0;
-  background: #e3e3e4;
-  border-radius: 18px;
+  background: var(--popular-item);
   padding: 2px 13px;
   margin-right: 3px;
+  border-radius: 18px;
+  color: var(--black);
   font-size: var(--font-15);
+  flex-shrink: 0;
   cursor: pointer;
 }
 .main .search-wrap button {
   position: absolute;
-  right: -30px;
   top: 30%;
+  right: -30px;
   transform: translateY(-20%);
   opacity: 0.4;
 }
@@ -67,14 +67,14 @@
   opacity: 0.6;
 }
 .main .selected-zone {
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  width: 50%;
   position: absolute;
   top: 190px;
-  left: calc(10px + 1% + 11.1111111111% + 30px);
+  left: var(--selected-zone-left);
 }
 .main .selected-zone .selected-item {
   display: inline-flex;
@@ -89,9 +89,9 @@
   flex-direction: column;
   gap: 7px;
   padding: 10px;
-  background: skyblue;
-  color: var(--white);
   border-radius: 5px;
+  color: #ffffff;
+  background: skyblue;
 }
 .main .selected-zone .selected-item div:nth-child(1) .number {
   font-size: 13px;
@@ -115,7 +115,7 @@
 .main .selected-zone .selected-item div:nth-child(1) .mass {
   font-size: 12px;
   font-weight: 500;
-  color: #000;
+  color: #000000;
 }
 .main .selected-zone .selected-item div:nth-child(2) {
   display: flex;
@@ -126,7 +126,7 @@
   padding: 10px 0;
 }
 .main .selected-zone .selected-item div:nth-child(2) p {
-  color: var(--font-color);
+  color: var(--dark-gray);
 }
 .main .selected-zone .selected-item div:nth-child(2) p:not(:last-child) {
   margin-bottom: 6px;
@@ -152,9 +152,9 @@
   align-items: center;
   gap: 7px;
   font-size: 13px;
-  color: var(--font-color);
+  color: var(--dark-gray);
   font-weight: 500;
-  background: #f4f4f4;
+  background: var(--tools-btn);
   width: 80px;
   height: 100px;
 }
@@ -169,20 +169,19 @@
   border-radius: 5px;
 }
 .main .selected-zone .switch-tools button.active {
-  background: #e3e3e3;
+  background: var(--tools-active-btn);
 }
 .main .periodic-table {
   display: grid;
   grid-template-columns: repeat(18, minmax(0, 87px));
   grid-template-rows: repeat(9, auto);
+  padding: 10px 10px 0;
   margin: 0 auto;
   margin-top: 40px;
-  padding: 10px 10px 0;
 }
 .main .periodic-table .element-item {
   padding: 7px 5px;
-  background: skyblue;
-  color: var(--white);
+  color: #ffffff;
   position: relative;
   cursor: pointer;
   /* grid 배치 */
@@ -190,27 +189,27 @@
   /* border */
 }
 .main .periodic-table .element-item .number {
-  font-size: 10px;
+  font-size: var(--font-10);
   font-weight: 100;
 }
 .main .periodic-table .element-item .symbol {
-  font-size: 32px;
+  font-size: var(--font-32);
   line-height: 32px;
   font-weight: 900;
   opacity: 0.95;
   margin: 2px 0;
 }
 .main .periodic-table .element-item .name {
-  font-size: 12px;
+  font-size: var(--font-12);
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .main .periodic-table .element-item .mass {
-  font-size: 10px;
+  font-size: var(--font-10);
   font-weight: 500;
-  color: #000;
+  color: #000000;
   margin: 2px 0;
 }
 .main .periodic-table .element-item:hover {
@@ -245,7 +244,7 @@
 }
 .main .periodic-table .element-item::after, .main .periodic-table .element-item::before {
   opacity: 0.3;
-  color: var(--black-white-color);
+  color: var(--black);
   font-size: 10px;
 }
 .main .periodic-table .element-item:nth-child(1)::before {
@@ -431,28 +430,30 @@
   padding: 10px 20px;
 }
 .info .width-wrap .element-type ul {
+  width: 70%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px 0px;
-  width: 70%;
 }
 .info .width-wrap .element-type ul li span {
-  display: inline-block;
   width: 44px;
   height: 14px;
+  display: inline-block;
   margin-right: 10px;
 }
 .info .width-wrap .mobile-app p {
-  color: var(--font-color);
+  color: var(--dark-gray);
+  font-size: var(--font-16);
   line-height: 22px;
   margin-bottom: 28px;
 }
 .info .width-wrap .mobile-app a {
-  display: inline-block;
   height: -moz-fit-content;
   height: fit-content;
-  background: #000;
+  display: inline-block;
+  background: #000000;
   border-radius: 8px;
+  font-size: var(--font-16);
 }
 .info .width-wrap .element-glossary {
   grid-column: 1/-1;
@@ -463,12 +464,8 @@
   gap: 15px 0;
 }
 
+/* responsive */
 @media all and (max-width: 1400px) {
-  /* main */
-  .main .selected-zone {
-    left: calc(10px + 1% + 11.1111111111% + 20px);
-  }
-  /* info */
   .info .width-wrap {
     grid-template-columns: 1fr 0.6fr;
   }
@@ -476,14 +473,7 @@
     width: 85%;
   }
 }
-@media all and (max-width: 1200px) {
-  /* main */
-  .main .selected-zone {
-    left: calc(10px + 1% + 8.3333333333% + 50px);
-  }
-}
 @media all and (max-width: 1160px) {
-  /* main */
   .main .selected-zone .selected-item div:nth-child(1) {
     width: 90px;
     height: 108px;
@@ -514,37 +504,26 @@
     width: 70px;
     height: 90px;
   }
-  /* info */
   .info .width-wrap .mobile-app p {
-    font-size: 14px;
     margin-bottom: 20px;
   }
   .info .width-wrap .mobile-app img {
     width: 130px;
     height: 40px;
   }
-  .info a {
-    font-size: 14px;
-  }
 }
 @media (max-width: 1000px) and (min-width: 650px) {
-  /* main */
   .main .search-wrap {
     width: 65%;
   }
   .main .search-wrap input {
     height: 45px;
   }
-  .main .search-wrap .popular p {
-    font-size: 12px;
-  }
   .main .search-wrap .popular ul li {
     height: 17px;
-    font-size: 12px;
   }
   .main .selected-zone {
     align-items: flex-start;
-    left: calc(10px + 1% + 8.3333333333% + 20px);
     top: 150px;
     width: 52%;
   }
@@ -552,7 +531,7 @@
     gap: 5px;
   }
   .main .selected-zone .selected-item div:nth-child(1) {
-    width: 67px;
+    width: 60px;
     height: 70px;
     gap: 3px;
   }
@@ -560,11 +539,12 @@
     font-size: 8px;
   }
   .main .selected-zone .selected-item div:nth-child(1) .symbol {
-    line-height: 14px;
-    font-size: 30px;
+    line-height: 11px;
+    font-size: 28px;
   }
   .main .selected-zone .selected-item div:nth-child(1) .name {
     font-size: 8px;
+    margin-top: 3px;
   }
   .main .selected-zone .selected-item div:nth-child(1) .mass {
     font-size: 7px;
@@ -590,17 +570,6 @@
   .main .periodic-table .element-item {
     padding: 0 5px;
     /* border */
-  }
-  .main .periodic-table .element-item .number {
-    font-size: 9px;
-    font-weight: 500;
-  }
-  .main .periodic-table .element-item .symbol {
-    font-size: 20px;
-    line-height: 14px;
-  }
-  .main .periodic-table .element-item .name {
-    font-size: 8px;
   }
   .main .periodic-table .element-item .mass {
     font-size: 7px;
@@ -688,13 +657,11 @@
   }
 }
 @media all and (max-width: 960px) {
-  /* info */
   .info .width-wrap {
     grid-template-columns: 1fr;
   }
 }
 @media all and (max-width: 650px) {
-  /* main */
   .main .search-wrap {
     width: 90%;
     left: 47%;
@@ -706,9 +673,9 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(33, 102px);
     gap: 5px;
+    padding: 0;
     margin-top: 150px;
     margin-bottom: 630px;
-    padding: 0;
   }
   .main .periodic-table .element-item {
     height: 102px;
@@ -801,98 +768,98 @@
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -20px;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -20px;
   }
   .main .periodic-table .element-item:nth-child(3)::before {
     content: "Period 2";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(11)::before {
     content: "Period 3";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(19)::before {
     content: "Period 4";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(37)::before {
     content: "Period 5";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(55)::before {
     content: "Period 6";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(73)::before {
     content: "Period 7";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(91)::before {
     content: "Lanthanoids";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(106)::before {
     content: "Actinoids";
     display: block;
     width: 100%;
     height: 100%;
-    margin-top: -40px;
-    position: absolute;
-    font-size: 24px;
+    font-size: var(--font-24);
     font-weight: 800;
     opacity: 1;
+    margin-top: -40px;
+    position: absolute;
   }
   .main .periodic-table .element-item:nth-child(n+3) {
     margin-top: 65px;
@@ -933,21 +900,11 @@
   .main .periodic-table .element-item:nth-child(1), .main .periodic-table .element-item:nth-child(2), .main .periodic-table .element-item:nth-child(4), .main .periodic-table .element-item:nth-child(105), .main .periodic-table .element-item:nth-child(5), .main .periodic-table .element-item:nth-child(91), .main .periodic-table .element-item:nth-child(73), .main .periodic-table .element-item:nth-child(106), .main .periodic-table .element-item:nth-child(90), .main .periodic-table .element-item:nth-child(120) {
     border-radius: 5px;
   }
-  /* info */
   .info {
     display: none;
   }
 }
 @media (prefers-color-scheme: dark) {
-  .main .search-wrap .popular ul li {
-    background: #2b2b2b;
-  }
-  .main .selected-zone .switch-tools button {
-    background: #1b1b1e;
-  }
-  .main .selected-zone .switch-tools button.active {
-    background: #121212;
-  }
   .info .width-wrap .mobile-app a {
     border: 1px solid #fff;
   }
