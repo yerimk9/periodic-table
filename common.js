@@ -65,12 +65,12 @@ if (prefersDarkScheme) {
 // help Modal
 $(".helpBtn").on("click", function () {
   if ($(window).width() > 650) {
-    $(".help-modal .width-wrap.small").css({
+    $(".help-modal").css({
       transition: "transform 0.5s ease",
       transform: "translate(-50%, -50%)",
     });
   } else {
-    $(".help-modal .width-wrap.small").css({
+    $(".help-modal").css({
       transition: "transform 0.5s ease",
       transform: "initial",
     });
@@ -79,12 +79,12 @@ $(".helpBtn").on("click", function () {
 
 $(".help-modal .close").on("click", function () {
   if ($(window).width() > 650) {
-    $(".help-modal .width-wrap.small").css({
+    $(".help-modal").css({
       transition: "transform 0.1s ease",
       transform: "translate(-50%, 100%)",
     });
   } else {
-    $(".help-modal .width-wrap.small").css({
+    $(".help-modal").css({
       transition: "transform 0.1s ease",
       transform: "translate(0%, 100%)",
     });
