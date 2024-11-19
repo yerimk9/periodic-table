@@ -1,0 +1,33 @@
+/* help-modal */
+.help-modal {
+  color: var(--black);
+}
+.help-modal .width-wrap {
+  background-color: var(--help-background);
+}
+.help-modal img {
+  filter: var(--invert-value);
+}
+.help-modal img:not(:first-child) {
+  width: 100%;
+  margin: 20px 0;
+}
+.help-modal section:not(:nth-of-type(1)) {
+  margin-top: 40px;
+}
+.help-modal section:last-child img:last-child {
+  margin-bottom: 45px;
+}
+.help-modal h2 {
+  margin-top: 40px;
+}
+.help-modal h3 {
+  font-size: var(--font-18);
+  font-weight: 700;
+}
+.help-modal p {
+  line-height: 1.7;
+  font-size: var(--font-15);
+  opacity: 0.9;
+  margin: 15px 0;
+}

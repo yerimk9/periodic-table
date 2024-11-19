@@ -1,0 +1,45 @@
+@import "./mixin";
+@import "./variables";
+
+/* help-modal */
+.help-modal {
+  color: var(--black);
+  .width-wrap {
+    background-color: var(--help-background);
+  }
+
+  img {
+    filter: var(--invert-value);
+    &:not(:first-child) {
+      width: 100%;
+      margin: 20px 0;
+    }
+  }
+
+  section {
+    &:not(:nth-of-type(1)) {
+      margin-top: 40px;
+    }
+    &:last-child {
+      img:last-child {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  h3 {
+    font-size: var(--font-18);
+    font-weight: 700;
+  }
+
+  p {
+    line-height: 1.7;
+    font-size: var(--font-15);
+    opacity: 0.9;
+    margin: 15px 0;
+  }
+}

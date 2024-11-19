@@ -7,7 +7,7 @@
   --tools-btn: #f4f4f4;
   --tools-active-btn: #e3e3e3;
   --input-background: #f7f7f7;
-  --helpBtn: invert(0%);
+  --help-background: #ffffff;
 
   --font-32: 32px;
   --font-24: 24px;
@@ -17,6 +17,7 @@
   --font-12: 12px;
   --font-10: 10px;
 
+  --invert-value: invert(0%);
   --selected-zone-left: calc(10px + 1% + 200% / 18 + 30px);
 }
 
@@ -29,7 +30,8 @@
   --tools-btn: #1b1b1e;
   --tools-active-btn: #121212;
   --input-background: #101010;
-  --helpBtn: invert(100%);
+  --help-background: #212121;
+  --invert-value: invert(100%);
 }
 
 * {
