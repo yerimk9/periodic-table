@@ -34,11 +34,9 @@ element.each((_, el) => {
 });
 
 // 다크모드 토글
-const toggleBtn = $(".toggleBtn");
-toggleBtn.on("click", function () {
+$(".toggleBtn").on("click", function () {
   const toggleBtnImg = $(".toggleBtn img");
   const currentSrc = toggleBtnImg.attr("src");
-  $("body").toggleClass("dark-mode");
 
   if (currentSrc === "/img/icon/icon-sun.svg") {
     toggleBtnImg.attr("src", "/img/icon/icon-moon.svg");
@@ -47,4 +45,13 @@ toggleBtn.on("click", function () {
     toggleBtnImg.attr("src", "/img/icon/icon-sun.svg");
     toggleBtnImg.attr("alt", "라이트 모드");
   }
+  $("html").toggleClass("dark-mode");
 });
+
+// 사용자 환경 테마에 따른 초기 테마
+const prefersDarkScheme = window.matchMedia(
+  "(prefers-color-scheme: dark)"
+).matches;
+if (prefersDarkScheme) {
+  $("html").toggleClass("dark-mode");
+}

@@ -19,6 +19,17 @@
   --selected-zone-left: calc(10px + 1% + 200% / 18 + 30px);
 }
 
+.dark-mode {
+  --white: #000000;
+  --black: #ffffff;
+  --dark-gray: #d2d2d2;
+  --background-color: #000000;
+  --popular-item: #2b2b2b;
+  --tools-btn: #1b1b1e;
+  --tools-active-btn: #121212;
+  --input-background: #101010;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -217,21 +228,5 @@ table {
     --font-10: 9px;
 
     --selected-zone-left: calc(10px + 1% + 8.3333333333% + 25px);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --white: #000000;
-    --black: #ffffff;
-    --dark-gray: #d2d2d2;
-    --background-color: #000000;
-    --popular-item: #2b2b2b;
-    --tools-btn: #1b1b1e;
-    --tools-active-btn: #121212;
-    --input-background: #101010;
-  }
-  a:hover {
-    color: #e5e5e5;
   }
 }
