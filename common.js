@@ -37,8 +37,6 @@ element.each((_, el) => {
 $(".toggleBtn").on("click", function () {
   const toggleBtnImg = $(".toggleBtn img");
   const currentSrc = toggleBtnImg.attr("src");
-  const helpBtnImg = $(".helpBtn img");
-  console.log(helpBtnImg);
 
   $(".toggleBtn").css("transform", "scale(0)");
 
@@ -63,3 +61,32 @@ const prefersDarkScheme = window.matchMedia(
 if (prefersDarkScheme) {
   $("html").toggleClass("dark-mode");
 }
+
+// help Modal
+$(".helpBtn").on("click", function () {
+  if ($(window).width() > 650) {
+    $(".help-modal .width-wrap.small").css({
+      transition: "transform 0.5s ease",
+      transform: "translate(-50%, -50%)",
+    });
+  } else {
+    $(".help-modal .width-wrap.small").css({
+      transition: "transform 0.5s ease",
+      transform: "initial",
+    });
+  }
+});
+
+$(".help-modal .close").on("click", function () {
+  if ($(window).width() > 650) {
+    $(".help-modal .width-wrap.small").css({
+      transition: "transform 0.1s ease",
+      transform: "translate(-50%, 100%)",
+    });
+  } else {
+    $(".help-modal .width-wrap.small").css({
+      transition: "transform 0.1s ease",
+      transform: "translate(0%, 100%)",
+    });
+  }
+});
