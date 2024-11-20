@@ -61,6 +61,11 @@ const prefersDarkScheme = window.matchMedia(
 if (prefersDarkScheme) {
   $("html").toggleClass("dark-mode");
 }
+// 더보기 버튼
+$(".moreBtn").on("click", function () {
+  $(".desc-box").toggleClass("expanded");
+  $(this).text($(this).text() === "더보기" ? "닫기" : "더보기");
+});
 
 // help Modal
 $(".helpBtn").on("click", function () {
@@ -73,20 +78,6 @@ $(".helpBtn").on("click", function () {
     $(".help-modal").css({
       transition: "transform 0.5s ease",
       transform: "initial",
-    });
-  }
-});
-
-$(".help-modal .close").on("click", function () {
-  if ($(window).width() > 650) {
-    $(".help-modal").css({
-      transition: "transform 0.1s ease",
-      transform: "translate(-50%, 100%)",
-    });
-  } else {
-    $(".help-modal").css({
-      transition: "transform 0.1s ease",
-      transform: "translate(0%, 100%)",
     });
   }
 });
@@ -122,22 +113,17 @@ $(".periodic-table .element-item").on("click", function () {
   }
 });
 
-$(".element-modal .close").on("click", function () {
+// 모달 닫기
+$(".help-modal .close, .element-modal .close").on("click", function () {
   if ($(window).width() > 650) {
-    $(".element-modal").css({
+    $(".help-modal, .element-modal").css({
       transition: "transform 0.1s ease",
       transform: "translate(-50%, 100%)",
     });
   } else {
-    $(".element-modal").css({
+    $(".help-modal, .element-modal").css({
       transition: "transform 0.1s ease",
       transform: "translate(0%, 100%)",
     });
   }
-});
-
-// 더보기 버튼
-$(".moreBtn").on("click", function () {
-  $(".desc-box").toggleClass("expanded");
-  $(this).text($(this).text() === "더보기" ? "닫기" : "더보기");
 });
