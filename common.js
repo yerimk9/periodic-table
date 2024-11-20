@@ -86,6 +86,9 @@ $(".helpBtn, .periodic-table .element-item, .downBtn").on("click", function () {
     }
   } else if ($(this).hasClass("downBtn")) {
     targetModal = ".download-modal";
+
+    $(".download-modal-bg").addClass("on");
+    $("body").css("overflow", "hidden");
   } else {
     targetModal = ".help-modal";
   }
@@ -108,6 +111,11 @@ $(".help-modal .close, .element-modal .close, .download-modal .close").on(
   "click",
   function () {
     const targetModal = $(this).parents(".width-wrap").parent();
+
+    if (targetModal.hasClass("download-modal")) {
+      $(".download-modal-bg").removeClass("on");
+      $("body").css("overflow", "auto");
+    }
 
     if ($(window).width() > 650) {
       $(targetModal).css({
@@ -176,3 +184,10 @@ $("a.option").on({
     }, 2000);
   },
 });
+
+/**
+ * 
+ *     pointer-events: none;
+    opacity: 0.2;
+    overflow: hidden;
+ */

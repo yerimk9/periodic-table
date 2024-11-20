@@ -2,7 +2,7 @@
 .help-modal {
   color: var(--black);
   position: fixed;
-  z-index: 999999;
+  z-index: 99999;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 100%);
@@ -39,7 +39,7 @@
 .element-modal {
   color: #000000;
   position: fixed;
-  z-index: 999999;
+  z-index: 99999;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 100%);
@@ -135,10 +135,20 @@
 }
 
 /* download-modal */
+.download-modal-bg.on {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+}
+
 .download-modal {
   color: var(--black);
   position: fixed;
-  z-index: 999999;
+  z-index: 1000000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 100%);
