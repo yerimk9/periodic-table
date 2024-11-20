@@ -187,15 +187,24 @@
 .download-modal .width-wrap section .download-options .option:hover {
   border: 2px solid var(--print-border);
 }
-.download-modal .width-wrap section .download-options .option:hover .size,
-.download-modal .width-wrap section .download-options .option:hover .dimension {
+.download-modal .width-wrap section .download-options .option.on .size,
+.download-modal .width-wrap section .download-options .option.on .dimension {
   transform: translateY(50px);
   opacity: 0;
 }
-.download-modal .width-wrap section .download-options .option:hover .img {
+.download-modal .width-wrap section .download-options .option.on .img {
   top: 50%;
   transform: translate(-50%, -50%);
   opacity: 1;
+}
+.download-modal .width-wrap section .download-options .option.loading .size,
+.download-modal .width-wrap section .download-options .option.loading .dimension {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.download-modal .width-wrap section .download-options .option.loading .img {
+  transform: translate(-50%, calc(-50% - 150px));
+  opacity: 0;
 }
 .download-modal .width-wrap section .download-options .option .size {
   font-size: 40px;
@@ -211,7 +220,7 @@
 .download-modal .width-wrap section .download-options .option .img {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, calc(-50% - 100px));
+  transform: translate(-50%, calc(-50% - 150px));
   width: 50px;
   height: 50px;
   background: url("/img/icon/download.png") no-repeat center/cover;

@@ -147,3 +147,32 @@ $(".periodic-table .element-item").on("mouseenter", function () {
     );
   }
 });
+
+// download 옵션 클릭시 지연 로딩
+$("a.option").on({
+  mouseenter: function () {
+    $(this).addClass("on");
+  },
+  mouseleave: function () {
+    $(this).removeClass("on");
+  },
+  click: function (e) {
+    e.preventDefault();
+
+    const downloadUrl = $(this).attr("href");
+    const fileName = $(this).attr("download");
+    $(this).addClass("loading");
+    $(this).find(".loading").addClass("spinner");
+
+    setTimeout(() => {
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      $(this).removeClass("loading");
+      $(this).find(".loading").removeClass("spinner");
+    }, 2000);
+  },
+});
