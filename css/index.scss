@@ -17,10 +17,11 @@
       padding-left: 15px;
       margin-top: 10px;
       font-size: var(--font-18);
+      color: var(--black);
 
       &::placeholder {
         font-size: var(--font-18);
-        color: #999999;
+        color: var(--input-placeholder);
       }
     }
 

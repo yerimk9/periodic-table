@@ -90,3 +90,24 @@ $(".help-modal .close").on("click", function () {
     });
   }
 });
+
+// 더보기 버튼
+$(".moreBtn").on("click", function () {
+  const descBox = $(".desc-box");
+
+  // 현재 상태 확인 후 토글
+  if (descBox.css("max-height") === "65px") {
+    descBox.css({
+      "max-height": "max-content",
+      "mask-image": "none",
+    });
+    $(".moreBtn").text("닫기");
+  } else {
+    descBox.css({
+      "max-height": "65px",
+      "mask-image":
+        "linear-gradient(180deg, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%)",
+    });
+    $(".moreBtn").text("더보기");
+  }
+});

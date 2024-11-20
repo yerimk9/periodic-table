@@ -14,14 +14,15 @@
   padding-left: 15px;
   margin-top: 10px;
   font-size: var(--font-18);
+  color: var(--black);
 }
 .main .search-wrap input::-moz-placeholder {
   font-size: var(--font-18);
-  color: #999999;
+  color: var(--input-placeholder);
 }
 .main .search-wrap input::placeholder {
   font-size: var(--font-18);
-  color: #999999;
+  color: var(--input-placeholder);
 }
 .main .search-wrap .popular {
   display: flex;

@@ -56,60 +56,6 @@
   transform: translate(-50%, -50%);
   transition: transform 0.5s ease;
 
-  .width-wrap {
-    background-color: var(--help-background);
-
-    h2 {
-      margin-top: 0;
-      margin-left: -20px;
-      padding: 0;
-      font-size: 240px;
-      font-weight: 900;
-      color: #ffffff;
-      margin-top: -30px;
-      margin-bottom: 0;
-    }
-
-    h3 {
-      font-size: var(--font-32);
-    }
-
-    section {
-      padding: 0 50px;
-      margin-top: 50px;
-      &:nth-of-type(1) {
-        color: #ffffff;
-
-        .number {
-          font-size: 28px;
-        }
-        .mass {
-          font-size: 28px;
-          color: #000000;
-          margin: 10px 0px;
-        }
-        .mass + div {
-          width: 90%;
-          max-height: 65px;
-          height: auto;
-          overflow: hidden;
-          mask-image: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 1) 0,
-            rgba(255, 255, 255, 1) 50%,
-            rgba(255, 255, 255, 0) 100%
-          );
-        }
-        .desc {
-          color: #000000;
-          font-size: 14px;
-          line-height: 1.5;
-          font-weight: 300;
-        }
-      }
-    }
-  }
-
   .modal-header {
     .mode-switch {
       display: inline-block;
@@ -139,6 +85,74 @@
       position: absolute;
       right: 24px;
       top: 24px;
+      filter: invert(1);
+    }
+  }
+
+  .width-wrap {
+    background-color: var(--help-background);
+
+    h2 {
+      margin-top: 0;
+      margin-left: -20px;
+      padding: 0;
+      font-size: 240px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-top: -30px;
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-size: 52px;
+    }
+
+    section {
+      padding: 0 50px;
+      margin-top: 50px;
+      &:nth-of-type(1) {
+        color: #ffffff;
+
+        .number {
+          font-size: 28px;
+        }
+        .mass {
+          font-size: 28px;
+          color: #000000;
+          margin: 10px 0px;
+        }
+        .desc-box {
+          width: 90%;
+          max-height: 65px;
+          height: auto;
+          overflow: hidden;
+          mask-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 0,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 100%
+          );
+
+          .desc {
+            color: #000000;
+            font-size: 14px;
+            line-height: 1.5;
+            font-weight: 300;
+          }
+        }
+
+        .moreBtn {
+          background: #ffffff;
+          padding: 3px 9px;
+          border-radius: 5px;
+          font-size: var(--font-12);
+          margin-top: 5px;
+
+          &:hover {
+            box-shadow: 0 10px 22px -4px rgba(0, 0, 0, 0.38);
+          }
+        }
+      }
     }
   }
 }
