@@ -102,7 +102,7 @@ footer .width-wrap a {
 }
 
 @keyframes scroll-x {
-  0% {
+  /* 0% {
     transform: translateX(0%);
   }
   50% {
@@ -110,6 +110,22 @@ footer .width-wrap a {
   }
   100% {
     transform: translateX(-100%);
+  } */
+  0% {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(-70%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-80%);
+    opacity: 0;
   }
 }
 
@@ -122,6 +138,9 @@ footer .width-wrap a {
 @media (max-width: 1000px) and (min-width: 650px) {
   .width-wrap {
     padding: 10px 0 0 0;
+  }
+  .width-wrap.small {
+    max-height: 85vh;
   }
 }
 @media all and (max-width: 650px) {

@@ -112,3 +112,28 @@ $(".help-modal .close, .element-modal .close").on("click", function () {
     });
   }
 });
+
+// element-item 호버 시 selected-item 변경
+$(".periodic-table .element-item").on("mouseenter", function () {
+  const number = $(this).data("number");
+  const currentItem = periodicTable.find((el) => el.number == number);
+
+  if (currentItem) {
+    $(".selected-zone .selected-item div:nth-child(1) .number").text(
+      currentItem.number
+    );
+    $(".selected-zone .selected-item div:nth-child(1) .symbol").text(
+      currentItem.symbol
+    );
+    $(".selected-zone .selected-item div:nth-child(1) .name").text(
+      currentItem.name
+    );
+    $(".selected-zone .selected-item div:nth-child(1) .mass").text(
+      currentItem.mass
+    );
+    $(".selected-zone .selected-item div:nth-child(1)").css(
+      "background",
+      colorTypes[currentItem.type]
+    );
+  }
+});

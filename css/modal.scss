@@ -175,7 +175,7 @@
 
       section {
         padding: 0 30px;
-        &:nth-of-type(1) {
+        &.intro {
           .mass {
             font-size: 18px;
           }
@@ -191,6 +191,41 @@
   }
 }
 
+@media (max-width: 1000px) and (min-width: 650px) {
+  .element-modal {
+    .width-wrap {
+      h2 {
+        font-size: 120px;
+        margin-top: -15px;
+        margin-left: 2px;
+      }
+      h3 {
+        font-size: 25px;
+      }
+
+      section {
+        padding: 0 30px;
+        &.intro {
+          .number {
+            font-size: 14px;
+            font-weight: 100;
+          }
+          .mass {
+            font-size: 15px;
+            font-weight: 300;
+          }
+
+          .desc-box {
+            .desc {
+              // font-size: 12px;
+              font-weight: 200;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 @media all and (max-width: 650px) {
   .help-modal,
   .element-modal {
