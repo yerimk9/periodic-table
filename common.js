@@ -67,49 +67,34 @@ $(".moreBtn").on("click", function () {
   $(this).text($(this).text() === "더보기" ? "닫기" : "더보기");
 });
 
-// help Modal
-$(".helpBtn").on("click", function () {
+// 모달 열기
+$(".helpBtn, .periodic-table .element-item").on("click", function () {
+  const currentModal = $(this).hasClass("element-item");
+  console.log(currentModal);
+
+  if (currentModal) {
+    const type = $(this).data("type");
+    const number = $(this).data("number");
+    const currentItem = periodicTable.find((el) => el.number == number);
+    if (currentItem) {
+      $(".element-modal .width-wrap").css("background", colorTypes[type]);
+      $(".element-modal .width-wrap .intro .number").text(currentItem.number);
+      $(".element-modal .width-wrap .intro h2").text(currentItem.symbol);
+      $(".element-modal .width-wrap .intro h3").text(currentItem.name);
+      $(".element-modal .width-wrap .intro .mass").text(currentItem.mass);
+    }
+  }
+
   if ($(window).width() > 650) {
-    $(".help-modal").css({
+    $(`${currentModal ? ".element-modal" : ".help-modal"}`).css({
       transition: "transform 0.5s ease",
       transform: "translate(-50%, -50%)",
     });
   } else {
-    $(".help-modal").css({
+    $(`${currentModal ? ".element-modal" : ".help-modal"}`).css({
       transition: "transform 0.5s ease",
       transform: "initial",
     });
-  }
-});
-
-// element Modal
-$(".periodic-table .element-item").on("click", function () {
-  const type = $(this).data("type");
-  const number = $(this).data("number");
-
-  const currentItem = periodicTable.find((el) => el.number == number);
-
-  if (currentItem) {
-    $(".element-modal .width-wrap").css("background", colorTypes[type]);
-    $(".element-modal .width-wrap .intro .number").text(currentItem.number);
-
-    $(".element-modal .width-wrap .intro h2").text(currentItem.symbol);
-
-    $(".element-modal .width-wrap .intro h3").text(currentItem.name);
-
-    $(".element-modal .width-wrap .intro .mass").text(currentItem.mass);
-
-    if ($(window).width() > 650) {
-      $(".element-modal").css({
-        transition: "transform 0.5s ease",
-        transform: "translate(-50%, -50%)",
-      });
-    } else {
-      $(".element-modal").css({
-        transition: "transform 0.5s ease",
-        transform: "initial",
-      });
-    }
   }
 });
 
