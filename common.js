@@ -68,11 +68,12 @@ $(".moreBtn").on("click", function () {
 });
 
 // 모달 열기
-$(".helpBtn, .periodic-table .element-item").on("click", function () {
-  const currentModal = $(this).hasClass("element-item");
-  console.log(currentModal);
+$(".helpBtn, .periodic-table .element-item, .downBtn").on("click", function () {
+  let targetModal;
 
-  if (currentModal) {
+  if ($(this).hasClass("element-item")) {
+    targetModal = ".element-modal";
+
     const type = $(this).data("type");
     const number = $(this).data("number");
     const currentItem = periodicTable.find((el) => el.number == number);
@@ -83,15 +84,19 @@ $(".helpBtn, .periodic-table .element-item").on("click", function () {
       $(".element-modal .width-wrap .intro h3").text(currentItem.name);
       $(".element-modal .width-wrap .intro .mass").text(currentItem.mass);
     }
+  } else if ($(this).hasClass("downBtn")) {
+    targetModal = ".download-modal";
+  } else {
+    targetModal = ".help-modal";
   }
 
   if ($(window).width() > 650) {
-    $(`${currentModal ? ".element-modal" : ".help-modal"}`).css({
+    $(targetModal).css({
       transition: "transform 0.5s ease",
       transform: "translate(-50%, -50%)",
     });
   } else {
-    $(`${currentModal ? ".element-modal" : ".help-modal"}`).css({
+    $(targetModal).css({
       transition: "transform 0.5s ease",
       transform: "initial",
     });
@@ -99,19 +104,24 @@ $(".helpBtn, .periodic-table .element-item").on("click", function () {
 });
 
 // 모달 닫기
-$(".help-modal .close, .element-modal .close").on("click", function () {
-  if ($(window).width() > 650) {
-    $(".help-modal, .element-modal").css({
-      transition: "transform 0.1s ease",
-      transform: "translate(-50%, 100%)",
-    });
-  } else {
-    $(".help-modal, .element-modal").css({
-      transition: "transform 0.1s ease",
-      transform: "translate(0%, 100%)",
-    });
+$(".help-modal .close, .element-modal .close, .download-modal .close").on(
+  "click",
+  function () {
+    const targetModal = $(this).parents(".width-wrap").parent();
+
+    if ($(window).width() > 650) {
+      $(targetModal).css({
+        transition: "transform 0.1s ease",
+        transform: "translate(-50%, 100%)",
+      });
+    } else {
+      $(targetModal).css({
+        transition: "transform 0.1s ease",
+        transform: "translate(0%, 100%)",
+      });
+    }
   }
-});
+);
 
 // element-item 호버 시 selected-item 변경
 $(".periodic-table .element-item").on("mouseenter", function () {
