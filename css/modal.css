@@ -134,6 +134,96 @@
   box-shadow: 0 10px 22px -4px rgba(0, 0, 0, 0.38);
 }
 
+/* download-modal */
+.download-modal {
+  color: var(--black);
+  position: fixed;
+  z-index: 999999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease;
+}
+.download-modal .width-wrap {
+  background-color: var(--print-background);
+}
+.download-modal .width-wrap .modal-header {
+  cursor: initial;
+  width: 95%;
+}
+.download-modal .width-wrap .modal-header img {
+  filter: var(--invert-value);
+  opacity: 0.5;
+}
+.download-modal .width-wrap section {
+  color: var(--black);
+  opacity: 0.7;
+}
+.download-modal .width-wrap section h2 {
+  font-size: 30px;
+  color: var(--black);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.download-modal .width-wrap section .download-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 153px);
+  gap: 10px;
+  margin-top: 15px;
+}
+.download-modal .width-wrap section .download-options .option {
+  text-align: center;
+  padding-top: 40px;
+  color: #8a8a8a;
+  background: var(--print-option-background);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: border 0.25s linear;
+}
+.download-modal .width-wrap section .download-options .option:hover {
+  border: 2px solid var(--print-border);
+}
+.download-modal .width-wrap section .download-options .option:hover .size,
+.download-modal .width-wrap section .download-options .option:hover .dimension {
+  transform: translateY(50px);
+  opacity: 0;
+}
+.download-modal .width-wrap section .download-options .option:hover .img {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.download-modal .width-wrap section .download-options .option .size {
+  font-size: 40px;
+  font-weight: 700;
+  opacity: 1;
+}
+.download-modal .width-wrap section .download-options .option .dimension {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 1;
+  margin-top: 10px;
+}
+.download-modal .width-wrap section .download-options .option .img {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 100px));
+  width: 50px;
+  height: 50px;
+  background: url("/img/icon/download.png") no-repeat center/cover;
+  filter: var(--invert-value);
+  opacity: 0;
+}
+.download-modal .width-wrap section .download-options .option .size,
+.download-modal .width-wrap section .download-options .option .dimension,
+.download-modal .width-wrap section .download-options .option .img {
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+}
+
 @media all and (max-width: 1200px) {
   .element-modal .width-wrap h2 {
     font-size: 160px;
@@ -151,6 +241,10 @@
   }
   .element-modal .width-wrap section.intro .desc-box .desc {
     font-size: 12px;
+  }
+  .download-modal {
+    transform: translate(-50%, 100%);
+    transition: none;
   }
 }
 @media (max-width: 1000px) and (min-width: 650px) {

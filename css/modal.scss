@@ -161,6 +161,107 @@
   }
 }
 
+/* download-modal */
+.download-modal {
+  color: var(--black);
+  position: fixed;
+  z-index: 999999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease;
+
+  .width-wrap {
+    background-color: var(--print-background);
+
+    .modal-header {
+      cursor: initial;
+      width: 95%;
+
+      img {
+        filter: var(--invert-value);
+        opacity: 0.5;
+      }
+    }
+
+    section {
+      color: var(--black);
+      opacity: 0.7;
+
+      h2 {
+        font-size: 30px;
+        color: var(--black);
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      .download-options {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 153px);
+        gap: 10px;
+        margin-top: 15px;
+
+        .option {
+          text-align: center;
+          padding-top: 40px;
+          color: #8a8a8a;
+          background: var(--print-option-background);
+          border-radius: 5px;
+          border: 2px solid transparent;
+          cursor: pointer;
+          overflow: hidden;
+          position: relative;
+          transition: border 0.25s linear;
+
+          &:hover {
+            border: 2px solid var(--print-border);
+
+            .size,
+            .dimension {
+              transform: translateY(50px);
+              opacity: 0;
+            }
+
+            .img {
+              top: 50%;
+              transform: translate(-50%, -50%);
+              opacity: 1;
+            }
+          }
+
+          .size {
+            font-size: 40px;
+            font-weight: 700;
+            opacity: 1;
+          }
+          .dimension {
+            font-size: 18px;
+            font-weight: 500;
+            opacity: 1;
+            margin-top: 10px;
+          }
+          .img {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 100px));
+            width: 50px;
+            height: 50px;
+            background: url("/img/icon/download.png") no-repeat center/cover;
+            filter: var(--invert-value);
+            opacity: 0;
+          }
+          .size,
+          .dimension,
+          .img {
+            transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media all and (max-width: 1200px) {
   .element-modal {
     .width-wrap {
@@ -188,6 +289,11 @@
         }
       }
     }
+  }
+
+  .download-modal {
+    transform: translate(-50%, 100%);
+    transition: none;
   }
 }
 

@@ -25,7 +25,14 @@ section {
   overflow: auto;
   padding: 0;
 }
-.width-wrap.small .modal-header {
+.width-wrap.mid {
+  width: 1200px;
+  height: 461px;
+  border-radius: 20px;
+  padding: 30px;
+}
+.width-wrap.small .modal-header,
+.width-wrap.mid .modal-header {
   width: 100%;
   height: 50px;
   cursor: move;
@@ -38,6 +45,12 @@ section {
 }
 .width-wrap.small h2 {
   margin-top: 50px;
+}
+.width-wrap.mid img:first-child {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }
 .width-wrap.small img:first-child {
   position: absolute;

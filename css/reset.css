@@ -10,6 +10,10 @@
   --input-placeholder: #999999;
   --help-background: #ffffff;
 
+  --print-background: #ffffff;
+  --print-option-background: #ebebeb;
+  --print-border: #8a8a8a;
+
   --font-32: 32px;
   --font-24: 24px;
   --font-18: 18px;
@@ -33,6 +37,11 @@
   --input-background: #101010;
   --input-placeholder: #d2d2d2;
   --help-background: #212121;
+
+  --print-option-background: #1d1d1d;
+  --print-background: #111111;
+  --print-border: #484848;
+
   --invert-value: invert(100%);
 }
 
