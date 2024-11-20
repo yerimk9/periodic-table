@@ -91,6 +91,35 @@ $(".help-modal .close").on("click", function () {
   }
 });
 
+// element Modal
+$(".periodic-table .element-item").on("click", function () {
+  if ($(window).width() > 650) {
+    $(".element-modal").css({
+      transition: "transform 0.5s ease",
+      transform: "translate(-50%, -50%)",
+    });
+  } else {
+    $(".element-modal").css({
+      transition: "transform 0.5s ease",
+      transform: "initial",
+    });
+  }
+});
+
+$(".element-modal .close").on("click", function () {
+  if ($(window).width() > 650) {
+    $(".element-modal").css({
+      transition: "transform 0.1s ease",
+      transform: "translate(-50%, 100%)",
+    });
+  } else {
+    $(".element-modal").css({
+      transition: "transform 0.1s ease",
+      transform: "translate(0%, 100%)",
+    });
+  }
+});
+
 // 더보기 버튼
 $(".moreBtn").on("click", function () {
   const descBox = $(".desc-box");
