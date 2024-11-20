@@ -132,6 +132,11 @@
             rgba(255, 255, 255, 0) 100%
           );
 
+          &.expanded {
+            max-height: max-content;
+            mask-image: none;
+          }
+
           .desc {
             color: #000000;
             font-size: 14px;
