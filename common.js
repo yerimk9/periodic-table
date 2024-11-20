@@ -8,9 +8,9 @@ popularData.forEach((item) => {
 // 주기율표 원소 나열
 periodicTable.forEach((el, idx) => {
   const listItem = `
-  <li class="element-item" data-type="${el.type}" style="background-color: ${
-    colorTypes[el.type]
-  }">
+  <li class="element-item" data-type="${el.type}" data-number="${
+    el.number
+  }" style="background-color: ${colorTypes[el.type]}">
     <span class="number">${el.number}</span>
     <p class="symbol">${el.symbol}</p>
     <p class="name">${el.name}</p>
@@ -93,16 +93,32 @@ $(".help-modal .close").on("click", function () {
 
 // element Modal
 $(".periodic-table .element-item").on("click", function () {
-  if ($(window).width() > 650) {
-    $(".element-modal").css({
-      transition: "transform 0.5s ease",
-      transform: "translate(-50%, -50%)",
-    });
-  } else {
-    $(".element-modal").css({
-      transition: "transform 0.5s ease",
-      transform: "initial",
-    });
+  const type = $(this).data("type");
+  const number = $(this).data("number");
+
+  const currentItem = periodicTable.find((el) => el.number == number);
+
+  if (currentItem) {
+    $(".element-modal .width-wrap").css("background", colorTypes[type]);
+    $(".element-modal .width-wrap .intro .number").text(currentItem.number);
+
+    $(".element-modal .width-wrap .intro h2").text(currentItem.symbol);
+
+    $(".element-modal .width-wrap .intro h3").text(currentItem.name);
+
+    $(".element-modal .width-wrap .intro .mass").text(currentItem.mass);
+
+    if ($(window).width() > 650) {
+      $(".element-modal").css({
+        transition: "transform 0.5s ease",
+        transform: "translate(-50%, -50%)",
+      });
+    } else {
+      $(".element-modal").css({
+        transition: "transform 0.5s ease",
+        transform: "initial",
+      });
+    }
   }
 });
 

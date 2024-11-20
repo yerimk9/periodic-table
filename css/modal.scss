@@ -91,8 +91,6 @@
   }
 
   .width-wrap {
-    background-color: var(--help-background);
-
     h2 {
       margin-top: 0;
       margin-left: -20px;
@@ -111,7 +109,7 @@
     section {
       padding: 0 50px;
       margin-top: 50px;
-      &:nth-of-type(1) {
+      &.intro {
         color: #ffffff;
 
         .number {
