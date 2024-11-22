@@ -14,7 +14,7 @@ periodicTable.forEach((el, idx) => {
       data-number="${el.number}" 
       style="
         background-color: ${colorTypes[el.type]};
-          animation-delay: ${Math.random() * 2}s;
+          animation-delay: ${Math.random() * 3 + 2}s;
       ">
     <span class="number">${el.number}</span>
     <p class="symbol">${el.symbol}</p>
@@ -262,3 +262,16 @@ $(".element-modal, .help-modal").on("mouseup", function (e) {
     });
   }
 });
+
+window.onload = function () {
+  $("#loader").css("display", "flex");
+  $("#loader .item:nth-of-type(1)").css({
+    top: "-40%",
+  });
+  $("#loader .item:nth-of-type(2)").css({
+    top: "40%",
+  });
+  setTimeout(function () {
+    $("#loader").css("display", "none");
+  }, 2000);
+};
