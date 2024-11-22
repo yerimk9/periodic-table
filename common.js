@@ -14,7 +14,7 @@ periodicTable.forEach((el, idx) => {
       data-number="${el.number}" 
       style="
         background-color: ${colorTypes[el.type]};
-          animation-delay: ${Math.random() * 3 + 2}s;
+          animation-delay: ${Math.random() * 2 + 2}s;
       ">
     <span class="number">${el.number}</span>
     <p class="symbol">${el.symbol}</p>
