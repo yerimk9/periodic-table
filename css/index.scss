@@ -208,7 +208,9 @@
       position: relative;
       cursor: pointer;
       filter: brightness(100%);
+      animation: fadeIn 0.8s ease-in-out forwards;
       transition: filter 0.1s linear;
+      opacity: 0;
 
       .number {
         font-size: var(--font-10);

@@ -6,11 +6,16 @@ popularData.forEach((item) => {
 });
 
 // 주기율표 원소 나열
+
 periodicTable.forEach((el, idx) => {
   const listItem = `
-  <li class="element-item" data-type="${el.type}" data-number="${
-    el.number
-  }" style="background-color: ${colorTypes[el.type]}">
+  <li class="element-item" 
+      data-type="${el.type}" 
+      data-number="${el.number}" 
+      style="
+        background-color: ${colorTypes[el.type]};
+          animation-delay: ${Math.random() * 2}s;
+      ">
     <span class="number">${el.number}</span>
     <p class="symbol">${el.symbol}</p>
     <p class="name">${el.name}</p>

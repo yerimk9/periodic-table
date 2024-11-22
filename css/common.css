@@ -132,6 +132,18 @@ footer .width-wrap a {
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* loading spiner */
 .spinner {
   filter: var(--invert-value);

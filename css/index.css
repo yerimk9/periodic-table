@@ -195,7 +195,9 @@
   position: relative;
   cursor: pointer;
   filter: brightness(100%);
+  animation: fadeIn 0.8s ease-in-out forwards;
   transition: filter 0.1s linear;
+  opacity: 0;
   /* grid 배치 */
   /* 두 단으로 나누기 */
   /* border */
