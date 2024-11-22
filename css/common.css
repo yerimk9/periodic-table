@@ -253,6 +253,14 @@ footer .width-wrap a {
     font-size: 24px;
   }
 }
+@media all and (max-width: 1200px) {
+  header .downBtn {
+    visibility: hidden;
+  }
+  header .downBtn img {
+    display: none;
+  }
+}
 @media (max-width: 1000px) and (min-width: 650px) {
   .width-wrap {
     padding: 10px 0 0 0;
@@ -279,6 +287,10 @@ footer .width-wrap a {
   }
   .width-wrap.small div:nth-of-type(1) {
     cursor: initial;
+  }
+
+  header {
+    justify-content: normal;
   }
 
   /* loader */
