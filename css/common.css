@@ -37,8 +37,6 @@ section {
   width: 100%;
   height: 50px;
   cursor: move;
-  position: fixed;
-  z-index: 10000;
 }
 .width-wrap.small section,
 .width-wrap.small h2 {

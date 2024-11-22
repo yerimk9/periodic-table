@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /* main */
+.main {
+  z-index: 1;
+}
 .main .search-wrap {
   display: grid;
   position: absolute;

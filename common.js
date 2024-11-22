@@ -76,8 +76,11 @@ $(".helpBtn, .periodic-table .element-item, .downBtn").on("click", function () {
 
     const type = $(this).data("type");
     const number = $(this).data("number");
+
     const currentItem = periodicTable.find((el) => el.number == number);
     if (currentItem) {
+      $(".element-modal").data("number", number);
+      console.log(colorTypes[type]);
       $(".element-modal .width-wrap").css("background", colorTypes[type]);
       $(".element-modal .width-wrap .intro .number").text(currentItem.number);
       $(".element-modal .width-wrap .intro h2").text(currentItem.symbol);
@@ -95,13 +98,13 @@ $(".helpBtn, .periodic-table .element-item, .downBtn").on("click", function () {
 
   if ($(window).width() > 650) {
     $(targetModal).css({
-      transition: "transform 0.5s ease",
-      transform: "translate(-50%, -50%)",
+      transition: "all 0.5s ease",
+      top: "auto",
+      transform: "translate(0,0)",
     });
   } else {
     $(targetModal).css({
-      transition: "transform 0.5s ease",
-      transform: "initial",
+      transition: "all 0.5s ease",
     });
   }
 });
@@ -119,13 +122,11 @@ $(".help-modal .close, .element-modal .close, .download-modal .close").on(
 
     if ($(window).width() > 650) {
       $(targetModal).css({
-        transition: "transform 0.1s ease",
-        transform: "translate(-50%, 100%)",
+        top: "100%",
       });
     } else {
       $(targetModal).css({
-        transition: "transform 0.1s ease",
-        transform: "translate(0%, 100%)",
+        top: "100%",
       });
     }
   }
@@ -185,9 +186,184 @@ $("a.option").on({
   },
 });
 
-/**
- * 
- *     pointer-events: none;
-    opacity: 0.2;
-    overflow: hidden;
- */
+// $(".element-modal").on("mousedown", function (e) {
+//   const $currentModal = $(this);
+
+//   let shiftX = e.clientX - $currentModal[0].getBoundingClientRect().left;
+//   let shiftY =
+//     e.clientY -
+//     $currentModal[0].getBoundingClientRect().top +
+//     $(".element-modal .modal-header").innerHeight() * 2.5;
+
+//   console.log("clientY : " + e.clientY);
+//   console.log(
+//     "getBoundingClientRect : " + $currentModal[0].getBoundingClientRect().top
+//   );
+//   console.log(
+//     "innerHeight : " + $(".element-modal .modal-header").innerHeight() * 2.5
+//   );
+//   console.log("screenY : " + e.screenY);
+
+//   function moveAt(pageX, screenY) {
+//     $currentModal.css({
+//       transition: "none",
+//       left: pageX - shiftX + "px",
+//       top: screenY - shiftY + "px",
+//     });
+//   }
+//   moveAt(e.pageX, e.screenY);
+
+//   function onMouseMove(event) {
+//     moveAt(event.pageX, event.screenY);
+//   }
+
+//   $(document).on("mousemove", onMouseMove);
+
+//   $currentModal.on("mouseup", function () {
+//     $(document).off("mousemove", onMouseMove);
+//     $currentModal.off("mouseup");
+//   });
+// });
+
+// $(".element-modal").on("mousedown", function (e) {
+//   $(".element-modal").data("moveX", e.screenX);
+//   $(".element-modal").data("moveY", e.screenY);
+
+//   function moveAt(pageX, screenY) {
+//     $(".element-modal").css({
+//       transform: `translate(${e.clientX - startX}px, ${e.clientY - startY}px)`,
+//     });
+//   }
+
+//   const startX = $(".element-modal").data("startX");
+//   const startY = $(".element-modal").data("startY");
+
+//   $(document).on("mousemove", function (e) {
+//     $(".element-modal").css({
+//       transform: `translate(${e.clientX - startX}px, ${e.clientY - startY}px)`,
+//     });
+//   });
+
+//   $currentModal.on("mouseup", function () {
+//     $(document).off("mousemove", onMouseMove);
+//     $currentModal.off("mouseup");
+//   });
+// });
+
+//////////////////////////////////
+// $(".element-modal").on("mousedown", function (e) {
+//   $(".element-modal").data("startX", e.screenX);
+//   $(".element-modal").data("startY", e.screenY);
+
+//   const startX = $(".element-modal").data("startX");
+//   const startY = $(".element-modal").data("startY");
+
+//   function moveAt() {
+//     $(".element-modal").css({
+//       transition: "none",
+//       transform: `translate(${e.screenX - Number(startX)}px, ${
+//         e.screenY - Number(startY)
+//       }px)`,
+//     });
+
+//     console.log(
+//       "1. " +
+//         (e.screenX - Number(startX)) +
+//         " : " +
+//         (e.screenY - Number(startY))
+//     );
+//   }
+//   moveAt();
+
+//   function onMouseMove(e) {
+//     $(".element-modal").css({
+//       transition: "none",
+//       transform: `translate(${e.screenX - Number(startX)}px, ${
+//         e.screenY - Number(startY)
+//       }px)`,
+//     });
+
+//     console.log(
+//       "2. " +
+//         (e.screenX - Number(startX)) +
+//         " : " +
+//         (e.screenY - Number(startY))
+//     );
+//   }
+//   $(document).on("mousemove", onMouseMove);
+
+//   // $(document).on("mousemove", function (e) {
+//   //   $(".element-modal").css({
+//   //     transform: `translate(${e.screenX - startX}px, ${e.screenY - startY}px)`,
+//   //   });
+//   // });
+
+//   $(".element-modal").on("mouseup", function () {
+//     $(document).off("mousemove", onMouseMove);
+//     $(".element-modal").off("mouseup");
+//   });
+// });
+//////////////////////////////////
+
+$(".element-modal").on("mousedown", function (e) {
+  // 마우스 다운 시 시작 좌표 설정
+  const startX = e.screenX;
+  const startY = e.screenY;
+
+  // 요소의 현재 위치 저장
+  const element = $(this);
+  const currentTransform = element.css("transform");
+
+  // 기존 위치 값 계산 (matrix 값을 파싱)
+  let [offsetX, offsetY] = [0, 0];
+  if (currentTransform && currentTransform !== "none") {
+    const matrix = currentTransform
+      .replace("matrix(", "")
+      .replace(")", "")
+      .split(", ");
+    offsetX = parseFloat(matrix[4]); // x축 변환 값
+    offsetY = parseFloat(matrix[5]); // y축 변환 값
+  }
+
+  // 마우스 이동 이벤트
+  function onMouseMove(e) {
+    const deltaX = e.screenX - startX;
+    const deltaY = e.screenY - startY;
+
+    element.css({
+      transition: "none",
+      transform: `translate(${offsetX + deltaX}px, ${offsetY + deltaY}px)`,
+    });
+  }
+
+  // 문서에 마우스 이동 이벤트 연결
+  $(document).on("mousemove", onMouseMove);
+
+  // 마우스 업 이벤트 처리
+  $(document).on("mouseup", function () {
+    $(document).off("mousemove", onMouseMove); // 이동 이벤트 해제
+    $(document).off("mouseup"); // 업 이벤트 해제
+  });
+});
+
+// $(".element-modal").on({
+//   mousedown: function (e) {
+//     $(".element-modal").attr("data-startX", e.clientX);
+//     $(".element-modal").attr("data-startY", e.clientY);
+//   },
+//   mousemove: function (e) {
+//     $(".element-modal").attr("data-moveX", e.screenX);
+//     $(".element-modal").attr("data-moveY", e.screenY);
+
+//     const startX = $(".element-modal").data("startX");
+//     const startY = $(".element-modal").data("startY");
+
+//     $(".element-modal").css({
+//       transform: `translate(${e.clientX - startX}px, ${e.clientY - startY}px)`,
+//     });
+//   },
+//   mouseup: function (e) {
+//     $(".element-modal").attr("data-endX", e.screenX);
+//     $(".element-modal").attr("data-endY", e.screenY);
+//   },
+// });
