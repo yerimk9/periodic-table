@@ -209,7 +209,6 @@
       cursor: pointer;
       filter: brightness(100%);
       animation: fadeIn 0.8s ease-in-out forwards;
-      transition: filter 0.1s linear;
       opacity: 0;
 
       .number {
@@ -239,7 +238,6 @@
 
       &:hover {
         filter: brightness(107%);
-        transition: filter 0.1s ease-out;
       }
 
       /* grid 배치 */
@@ -601,7 +599,7 @@
             &::before {
               content: "#{$value}";
               display: block;
-              width: 100%;
+              width: max-content;
               height: 100%;
               font-size: var(--font-24);
               font-weight: 800;
@@ -681,7 +679,13 @@
     display: none;
   }
 }
-
+@media all and (max-width: 375px) {
+  .main {
+    .periodic-table {
+      grid-template-columns: repeat(4, 87px);
+    }
+  }
+}
 @media (prefers-color-scheme: dark) {
   .info {
     .width-wrap {

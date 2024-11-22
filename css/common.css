@@ -280,4 +280,30 @@ footer .width-wrap a {
   .width-wrap.small div:nth-of-type(1) {
     cursor: initial;
   }
+
+  /* loader */
+  #loader .item {
+    padding: 15px;
+  }
+  #loader .item:nth-of-type(1) {
+    width: 180px;
+    height: 225px;
+  }
+  #loader .item:nth-of-type(2) {
+    width: 210px;
+    height: 250px;
+  }
+  #loader .item .number {
+    font-size: 20px;
+  }
+  #loader .item .symbol {
+    font-size: 90px;
+    margin-left: -8px;
+  }
+  #loader .item .name {
+    font-size: 25px;
+  }
+  #loader .item .mass {
+    font-size: 20px;
+  }
 }
