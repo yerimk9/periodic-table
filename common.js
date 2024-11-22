@@ -271,7 +271,9 @@ window.onload = function () {
   $("#loader .item:nth-of-type(2)").css({
     top: "40%",
   });
+  $("body").css("overflow", "hidden");
   setTimeout(function () {
     $("#loader").css("display", "none");
+    $("body").css("overflow", "auto");
   }, 2000);
 };
