@@ -105,7 +105,9 @@ $(".helpBtn, .periodic-table .element-item, .downBtn").on("click", function () {
   } else {
     $(targetModal).css({
       transition: "all 0.5s ease",
+      top: "0%",
     });
+    $(targetModal).closest(".modal-wrap").css("top", "10%");
   }
 });
 
@@ -186,184 +188,72 @@ $("a.option").on({
   },
 });
 
-// $(".element-modal").on("mousedown", function (e) {
-//   const $currentModal = $(this);
+// modal 이동 구현
+$(".element-modal, .help-modal").on("mousedown", function (e) {
+  if ($(window).width() >= 650) {
+    const startX = e.screenX;
+    const startY = e.screenY;
 
-//   let shiftX = e.clientX - $currentModal[0].getBoundingClientRect().left;
-//   let shiftY =
-//     e.clientY -
-//     $currentModal[0].getBoundingClientRect().top +
-//     $(".element-modal .modal-header").innerHeight() * 2.5;
+    const element = $(this);
+    const currentTransform = element.css("transform");
 
-//   console.log("clientY : " + e.clientY);
-//   console.log(
-//     "getBoundingClientRect : " + $currentModal[0].getBoundingClientRect().top
-//   );
-//   console.log(
-//     "innerHeight : " + $(".element-modal .modal-header").innerHeight() * 2.5
-//   );
-//   console.log("screenY : " + e.screenY);
+    let [offsetX, offsetY] = [0, 0];
+    if (currentTransform && currentTransform !== "none") {
+      const matrix = currentTransform
+        .replace("matrix(", "")
+        .replace(")", "")
+        .split(", ");
+      offsetX = parseFloat(matrix[4]);
+      offsetY = parseFloat(matrix[5]);
+    }
 
-//   function moveAt(pageX, screenY) {
-//     $currentModal.css({
-//       transition: "none",
-//       left: pageX - shiftX + "px",
-//       top: screenY - shiftY + "px",
-//     });
-//   }
-//   moveAt(e.pageX, e.screenY);
+    function onMouseMove(e) {
+      const deltaX = e.screenX - startX;
+      const deltaY = e.screenY - startY;
 
-//   function onMouseMove(event) {
-//     moveAt(event.pageX, event.screenY);
-//   }
+      element.css({
+        transition: "none",
+        transform: `translate(${offsetX + deltaX}px, ${offsetY + deltaY}px)`,
+      });
+    }
 
-//   $(document).on("mousemove", onMouseMove);
+    $(document).on("mousemove", onMouseMove);
 
-//   $currentModal.on("mouseup", function () {
-//     $(document).off("mousemove", onMouseMove);
-//     $currentModal.off("mouseup");
-//   });
-// });
-
-// $(".element-modal").on("mousedown", function (e) {
-//   $(".element-modal").data("moveX", e.screenX);
-//   $(".element-modal").data("moveY", e.screenY);
-
-//   function moveAt(pageX, screenY) {
-//     $(".element-modal").css({
-//       transform: `translate(${e.clientX - startX}px, ${e.clientY - startY}px)`,
-//     });
-//   }
-
-//   const startX = $(".element-modal").data("startX");
-//   const startY = $(".element-modal").data("startY");
-
-//   $(document).on("mousemove", function (e) {
-//     $(".element-modal").css({
-//       transform: `translate(${e.clientX - startX}px, ${e.clientY - startY}px)`,
-//     });
-//   });
-
-//   $currentModal.on("mouseup", function () {
-//     $(document).off("mousemove", onMouseMove);
-//     $currentModal.off("mouseup");
-//   });
-// });
-
-//////////////////////////////////
-// $(".element-modal").on("mousedown", function (e) {
-//   $(".element-modal").data("startX", e.screenX);
-//   $(".element-modal").data("startY", e.screenY);
-
-//   const startX = $(".element-modal").data("startX");
-//   const startY = $(".element-modal").data("startY");
-
-//   function moveAt() {
-//     $(".element-modal").css({
-//       transition: "none",
-//       transform: `translate(${e.screenX - Number(startX)}px, ${
-//         e.screenY - Number(startY)
-//       }px)`,
-//     });
-
-//     console.log(
-//       "1. " +
-//         (e.screenX - Number(startX)) +
-//         " : " +
-//         (e.screenY - Number(startY))
-//     );
-//   }
-//   moveAt();
-
-//   function onMouseMove(e) {
-//     $(".element-modal").css({
-//       transition: "none",
-//       transform: `translate(${e.screenX - Number(startX)}px, ${
-//         e.screenY - Number(startY)
-//       }px)`,
-//     });
-
-//     console.log(
-//       "2. " +
-//         (e.screenX - Number(startX)) +
-//         " : " +
-//         (e.screenY - Number(startY))
-//     );
-//   }
-//   $(document).on("mousemove", onMouseMove);
-
-//   // $(document).on("mousemove", function (e) {
-//   //   $(".element-modal").css({
-//   //     transform: `translate(${e.screenX - startX}px, ${e.screenY - startY}px)`,
-//   //   });
-//   // });
-
-//   $(".element-modal").on("mouseup", function () {
-//     $(document).off("mousemove", onMouseMove);
-//     $(".element-modal").off("mouseup");
-//   });
-// });
-//////////////////////////////////
-
-$(".element-modal").on("mousedown", function (e) {
-  // 마우스 다운 시 시작 좌표 설정
-  const startX = e.screenX;
-  const startY = e.screenY;
-
-  // 요소의 현재 위치 저장
-  const element = $(this);
-  const currentTransform = element.css("transform");
-
-  // 기존 위치 값 계산 (matrix 값을 파싱)
-  let [offsetX, offsetY] = [0, 0];
-  if (currentTransform && currentTransform !== "none") {
-    const matrix = currentTransform
-      .replace("matrix(", "")
-      .replace(")", "")
-      .split(", ");
-    offsetX = parseFloat(matrix[4]); // x축 변환 값
-    offsetY = parseFloat(matrix[5]); // y축 변환 값
-  }
-
-  // 마우스 이동 이벤트
-  function onMouseMove(e) {
-    const deltaX = e.screenX - startX;
-    const deltaY = e.screenY - startY;
-
-    element.css({
-      transition: "none",
-      transform: `translate(${offsetX + deltaX}px, ${offsetY + deltaY}px)`,
+    $(document).on("mouseup", function () {
+      $(document).off("mousemove", onMouseMove);
+      $(document).off("mouseup");
     });
   }
-
-  // 문서에 마우스 이동 이벤트 연결
-  $(document).on("mousemove", onMouseMove);
-
-  // 마우스 업 이벤트 처리
-  $(document).on("mouseup", function () {
-    $(document).off("mousemove", onMouseMove); // 이동 이벤트 해제
-    $(document).off("mouseup"); // 업 이벤트 해제
-  });
 });
 
-// $(".element-modal").on({
-//   mousedown: function (e) {
-//     $(".element-modal").attr("data-startX", e.clientX);
-//     $(".element-modal").attr("data-startY", e.clientY);
-//   },
-//   mousemove: function (e) {
-//     $(".element-modal").attr("data-moveX", e.screenX);
-//     $(".element-modal").attr("data-moveY", e.screenY);
+// modal이 화면 밖으로 탈출 시 잡아오기
+$(".element-modal, .help-modal").on("mouseup", function (e) {
+  const screenWidth = $(window).width();
+  const screenHeight = $(window).height();
 
-//     const startX = $(".element-modal").data("startX");
-//     const startY = $(".element-modal").data("startY");
+  const top = $(this)[0].getBoundingClientRect().top;
+  const left = $(this)[0].getBoundingClientRect().left;
+  const bottom = $(this)[0].getBoundingClientRect().bottom;
+  const right = $(this)[0].getBoundingClientRect().right;
+  const width = $(this)[0].getBoundingClientRect().width;
+  const height = $(this)[0].getBoundingClientRect().height;
+  console.log(
+    `top: ${top}, left: ${left}, bottom: ${bottom}, right: ${right}, width: ${width}, height: ${height}`
+  );
 
-//     $(".element-modal").css({
-//       transform: `translate(${e.clientX - startX}px, ${e.clientY - startY}px)`,
-//     });
-//   },
-//   mouseup: function (e) {
-//     $(".element-modal").attr("data-endX", e.screenX);
-//     $(".element-modal").attr("data-endY", e.screenY);
-//   },
-// });
+  if (
+    top < -100 ||
+    left < -100 ||
+    bottom > screenHeight + 100 ||
+    right > screenWidth + 100
+  ) {
+    $(this).css({
+      transition: "transform 0.3s ease",
+      transform: "translate(0, 0)",
+    });
+  } else {
+    $(this).css({
+      transition: "none",
+    });
+  }
+});

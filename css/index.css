@@ -194,6 +194,8 @@
   color: #ffffff;
   position: relative;
   cursor: pointer;
+  filter: brightness(100%);
+  transition: filter 0.1s linear;
   /* grid 배치 */
   /* 두 단으로 나누기 */
   /* border */
@@ -224,6 +226,7 @@
 }
 .main .periodic-table .element-item:hover {
   filter: brightness(107%);
+  transition: filter 0.1s ease-out;
 }
 .main .periodic-table .element-item:nth-child(2) {
   grid-column: 18;

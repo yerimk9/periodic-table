@@ -207,6 +207,8 @@
       color: #ffffff;
       position: relative;
       cursor: pointer;
+      filter: brightness(100%);
+      transition: filter 0.1s linear;
 
       .number {
         font-size: var(--font-10);
@@ -235,6 +237,7 @@
 
       &:hover {
         filter: brightness(107%);
+        transition: filter 0.1s ease-out;
       }
 
       /* grid 배치 */
