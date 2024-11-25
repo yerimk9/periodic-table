@@ -1,5 +1,11 @@
 {
+  "homepage": "https://yerimk9.github.io/periodic-table",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
   "dependencies": {
+    "gh-pages": "^6.2.0",
     "gsap": "^3.12.5",
     "jquery": "^3.7.1",
     "jqueryui": "^1.11.1"
