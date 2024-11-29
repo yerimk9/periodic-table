@@ -254,7 +254,7 @@
   transform: translate(-50%, calc(-50% - 150px));
   width: 50px;
   height: 50px;
-  background: url("/img/icon/download.png") no-repeat center/cover;
+  background: url("./img/icon/download.png") no-repeat center/cover;
   filter: var(--invert-value);
   opacity: 0;
 }
