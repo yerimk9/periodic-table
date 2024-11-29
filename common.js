@@ -47,10 +47,10 @@ $(".toggleBtn").on("click", function () {
 
   setTimeout(function () {
     if (currentSrc === "/img/icon/icon-sun.svg") {
-      toggleBtnImg.attr("src", "/img/icon/icon-moon.svg");
+      toggleBtnImg.attr("src", "./img/icon/icon-moon.svg");
       toggleBtnImg.attr("alt", "다크 모드");
     } else {
-      toggleBtnImg.attr("src", "/img/icon/icon-sun.svg");
+      toggleBtnImg.attr("src", "./img/icon/icon-sun.svg");
       toggleBtnImg.attr("alt", "라이트 모드");
     }
 
