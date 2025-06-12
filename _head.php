@@ -10,7 +10,6 @@
   <link type="text/css" rel="stylesheet" href="/css/common.css">
   <link type="text/css" rel="stylesheet" href="/css/index.css">
   <link type="text/css" rel="stylesheet" href="/css/modal.css">
-  <link type="text/javascript" src="./node_modules/jqueryui/jquery-ui.theme.min.css">
 
   <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap" rel="stylesheet">
 
   <!-- js -->
-  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/node_modules/jqueryui/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="/node_modules/gsap/dist/gsap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>>
 </head>
