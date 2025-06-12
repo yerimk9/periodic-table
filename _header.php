@@ -1,5 +1,5 @@
-<?
-include_once("{$_SERVER['DOCUMENT_ROOT']}/head.html")
+<?php
+include_once("_head.php");
 ?>
 
 <body>

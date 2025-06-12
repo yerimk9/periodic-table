@@ -1,3 +1,4 @@
+<script type="text/javascript" src="/data.js"></script>
 <script type="text/javascript" src="/common.js"></script>
 
 <footer>
